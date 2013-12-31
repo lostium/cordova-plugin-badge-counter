@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+        id="com.lostium.cordova.badgecounter"
+        version="1.0.0">
+
+    <name>BadgeCounter</name>
+    <author>Lostium Project</author>
+    <description>Cordova plugin for manage badge counter on app icon.</description>
+
+    <js-module src="www/badge-counter.js" name="BadgeCounter">
+        <clobbers target="window.badgeCounter" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BadgeCounter">
+                <param name="ios-package" value="BadgeCounter" />
+            </feature>
+        </config-file>
+        <header-file src="ios/BadgeCounter.h" />
+        <source-file src="ios/BadgeCounter.m" />
+    </platform>
+
+</plugin>
